@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description');
             $table->decimal('salary');
             $table->timestamps();
+            // $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

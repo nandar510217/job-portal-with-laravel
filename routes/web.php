@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::group(['prefix'=> 'admin'], function () {
     Route::resource('categories',CategoryController::class);
+    Route::resource('jobs',JobController::class);
 });
 
 
