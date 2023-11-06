@@ -31,6 +31,12 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'category_id' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'salary' => 'required'
+        ]);
         $jobs = Job::Create([
             'category_id' => $request->category_id,
             'title' => $request->title,
