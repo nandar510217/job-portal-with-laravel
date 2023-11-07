@@ -29,10 +29,10 @@
                 <td>{{ $job->salary }}</td>
                 <td>{{ $job->category->name }}</td>
                 <td>
-                    <form action="" method="post">
+                    <form action="{{ url('admin/jobs/' . $job->id)}}" method="post">
                         @csrf @method('delete')
-                        <a href="" class="btn btn-info btn-sm">Edit</a>
-                        <button class="btn btn-sm btn-danger">Delete</button>
+                        <a href="{{ url('admin/jobs/' .$job->id. '/edit')}}" class="btn btn-info btn-sm">Edit</a>
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
                 </td>
             </tr>

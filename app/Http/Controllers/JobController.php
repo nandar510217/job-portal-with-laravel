@@ -59,7 +59,9 @@ class JobController extends Controller
      */
     public function edit(string $id)
     {
-       
+        $job = Job::find($id);
+        $categories = Category::all();
+        return view('admin.job.edit', compact('job','categories'));
     }
 
     /**
@@ -67,7 +69,22 @@ class JobController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' =>'required',
+            'category_id' => 'required',
+            'description' => 'required',
+            'salary' => 'required'
+        ]);
+
+        $job = Job::find($id);
+        $job = $job->Update([
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'salary' => $request->salary
+        ]);
+        return redirect('admin/jobs')->with('success', 'You have successfully updated.');
+        
     }
 
     /**
@@ -75,6 +92,8 @@ class JobController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $job = Job::find($id);
+        $job->delete();
+        return redirect('admin/jobs')->with('success', 'You have successfully deleted.');
     }
 }

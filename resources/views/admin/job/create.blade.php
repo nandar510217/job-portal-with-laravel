@@ -16,13 +16,13 @@
                     @endforeach
                   </select>
                 <label for="">Description</label>
-                <textarea name="description" id="" rows="5" class="form-control"></textarea>
+                <textarea name="description" id="" rows="5" class="form-control @error('salary') is-invalid @enderror"></textarea>
                 @error('description')
                     <small class="text-danger">{{$message}}</small><br>
                 @enderror
                 <label for="">Salary</label>
-                <input type="number" name="salary" class="form-control @error('description') is-invalid @enderror">
-                @error('description')
+                <input type="number" name="salary" class="form-control @error('salary') is-invalid @enderror">
+                @error('salary')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
