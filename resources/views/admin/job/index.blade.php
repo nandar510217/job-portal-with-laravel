@@ -33,6 +33,7 @@
                         @csrf @method('delete')
                         <a href="{{ url('admin/jobs/' .$job->id. '/edit')}}" class="btn btn-info btn-sm">Edit</a>
                         <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+                        <a href="{{ route('form', $job->id) }}" class="btn btn-sm btn-warning">Form</a>
                     </form>
                 </td>
             </tr>

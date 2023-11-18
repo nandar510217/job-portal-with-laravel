@@ -10,8 +10,8 @@
                     <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-primary float-right">Save</button>
+            <div class="card-footer clearfix">
+                <button type="submit" class="btn btn-sm btn-primary float-end">Save</button>
             </div>
         </form>
     </div>

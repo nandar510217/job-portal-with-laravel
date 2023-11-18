@@ -11,7 +11,7 @@
                 @enderror
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-sm btn-primary float-right" onclick="return confirm('Are you sure you want to delete?')">Update</button>
+                <button type="submit" class="btn btn-sm btn-primary float-right">Update</button>
             </div>
         </form>
     </div>

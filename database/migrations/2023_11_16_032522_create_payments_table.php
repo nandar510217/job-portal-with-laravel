@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
             $table->integer('employer_id');
-            $table->string('title');
-            $table->longText('description');
-            $table->decimal('salary');
+            $table->text('image')->nullable;
             $table->timestamps();
-            // $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('payments');
     }
 };

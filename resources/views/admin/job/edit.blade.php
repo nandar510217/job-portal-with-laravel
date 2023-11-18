@@ -22,7 +22,7 @@
                     <small class="text-danger">{{$message}}</small><br>
                 @enderror
                 <label for="">Salary</label>
-                <input type="number" value="{{ $job->salary }}" name="salary" class="form-control @error('description') is-invalid @enderror">
+                <input type="text" value="{{ $job->salary }}" name="salary" class="form-control @error('description') is-invalid @enderror">
                 @error('salary')
                     <small class="text-danger">{{$message}}</small>
                 @enderror

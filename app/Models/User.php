@@ -19,8 +19,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role',
+        'active',
         'email',
         'password',
+        'image',
     ];
 
     /**
@@ -42,4 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function payment(){
+        return $this->hasOne(Payment::class,'employer_id');
+    }
 }
